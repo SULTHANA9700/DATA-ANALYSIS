@@ -1,0 +1,136 @@
+import numpy as np
+#Using Numpy, write a basic array of operations on single array to add x to each element of array and subtract y from each element of array. 
+a=np.array([1,2,3,4,5])
+print("original array : {}".format(a))
+x=int(input("enter a element that you want to add"))
+print(a+x)
+y=int(input("enter a element that you want to subtract"))
+print(a-y)
+
+OUTPUT:
+original array : [1 2 3 4 5]
+enter a element that you want to add3
+[4 5 6 7 8]
+enter a element that you want to subtract1
+[0 1 2 3 4]
+
+#Using Numpy, write a program to add, subtract and multiply two matrices. 
+import numpy as np
+a=np.array([[1,0,0],[0,1,0],[0,0,1]])
+b=np.array([[1,2,3],[2,3,4],[3,4,5]])
+print("matrices are ")
+print(a)
+print(b)
+print("addition of matrices")
+print(a+b)
+print("subtraction of matrices")
+print(a-b)
+print("multiplication of matrices")
+print(np.dot(a,b))
+
+
+OUTPUT:
+matrices are 
+[[1 0 0]
+ [0 1 0]
+ [0 0 1]]
+[[1 2 3]
+ [2 3 4]
+ [3 4 5]]
+addition of matrices
+[[2 2 3]
+ [2 4 4]
+ [3 4 6]]
+subtraction of matrices
+[[ 0 -2 -3]
+ [-2 -2 -4]
+ [-3 -4 -4]]
+multiplication of matrices
+[[1 2 3]
+ [2 3 4]
+ [3 4 5]]
+ 
+ 
+ import numpy as np
+#Create multi-dimensional arrays and find its shape and dimension
+a=np.array([[1,0],[0,1]])
+b=np.array([[1,2,3],[2,3,4],[3,4,5]])
+print("shape of a: ",np.shape(a))
+#Create a matrix full of zeros and ones 
+c=np.zeros((3,3))
+d=np.ones((3,3))
+print(c)
+print(d)
+#Reshape and flatten data in the array 
+k=a.reshape(1,4)
+print(k)
+l=b.flatten()
+print(l)
+#Append data vertically and horizontally 
+print(np.vstack((c,d)))
+print(np.hstack((c,d)))
+#Use statistical functions on array - Min, Max, Mean, Median and Standard Deviation 
+print(np.min(b))
+print(np.max(b))
+print(np.mean(b))
+print(np.median(b))
+print(np.std(b))
+#Dot and matrix product of two arrays 
+print(b*d)
+print(np.dot(b,d))
+#Compute the Eigen values of a matrix 
+value,vector=np.linalg.eig(b)
+print(value)
+#Solve a linear matrix equation such as 3 * x0 + x1 = 9, x0 + 2 * x1 = 8 
+r=[[3,1],[1,2]]
+r1=[[9],[8]]
+x=np.dot(np.linalg.inv(r),r1)
+print(x)
+x1=np.linalg.solve(r,r1)
+print(x1)
+#Compute the multiplicative inverse of a matrix 
+print(np.linalg.inv(a))
+#Compute the rank of a matrix 
+print(np.linalg.matrix_rank(b))
+#Compute the determinant of an array
+print(np.linalg.det(a))
+
+OUTPUT:
+shape of a:  (2, 2)
+[[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+[[1. 1. 1.]
+ [1. 1. 1.]
+ [1. 1. 1.]]
+[[1 0 0 1]]
+[1 2 3 2 3 4 3 4 5]
+[[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]
+ [1. 1. 1.]
+ [1. 1. 1.]
+ [1. 1. 1.]]
+[[0. 0. 0. 1. 1. 1.]
+ [0. 0. 0. 1. 1. 1.]
+ [0. 0. 0. 1. 1. 1.]]
+1
+5
+3.0
+3.0
+1.1547005383792515
+[[1. 2. 3.]
+ [2. 3. 4.]
+ [3. 4. 5.]]
+[[ 6.  6.  6.]
+ [ 9.  9.  9.]
+ [12. 12. 12.]]
+[ 9.62347538e+00 -6.23475383e-01  6.75139028e-17]
+[[2.]
+ [3.]]
+[[2.]
+ [3.]]
+[[1. 0.]
+ [0. 1.]]
+2
+1.0
